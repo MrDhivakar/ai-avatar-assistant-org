@@ -1,0 +1,8 @@
+
+flask
+opencv-python
+mediapipe
+deepface
+ollama
+pyttsx3
+sqlite3
