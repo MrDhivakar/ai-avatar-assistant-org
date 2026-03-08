@@ -1,8 +1,8 @@
-
 from flask import Flask, request, jsonify
 from ai_brain import reply
 from emotion import detect_emotion
 from database import save_chat
+import os
 
 app = Flask(__name__)
 
@@ -14,5 +14,10 @@ def chat():
     save_chat(text, ai)
     return jsonify({"reply": ai, "emotion": emotion})
 
+@app.route("/")
+def home():
+    return "AI Avatar Backend Running"
+
 if __name__ == "__main__":
-    app.run(port=5000)
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
