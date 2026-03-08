@@ -1,6 +1,5 @@
 flask
 opencv-python
 mediapipe
-deepface
 ollama
 pyttsx3
